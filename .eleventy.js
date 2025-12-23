@@ -19,6 +19,10 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets/images");
   eleventyConfig.addPassthroughCopy("src/.nojekyll");
 
+  // Passthrough for media files (episodes and transcripts at root level)
+  eleventyConfig.addPassthroughCopy("episodes");
+  eleventyConfig.addPassthroughCopy("transcripts");
+
   // Date filters
   eleventyConfig.addFilter("dateDisplay", (dateStr) => {
     const date = new Date(dateStr);

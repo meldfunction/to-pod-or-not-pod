@@ -28,6 +28,14 @@ layout: layouts/base.njk
     <p>{{ episode.longDescription }}</p>
   </div>
 
+  {% if episode.transcriptUrl %}
+  <div class="episode-transcript">
+    <a href="{{ episode.transcriptUrl | url }}" class="transcript-link" target="_blank" rel="noopener">
+      Download Transcript (PDF)
+    </a>
+  </div>
+  {% endif %}
+
   <aside class="episode-tags">
     <ul class="tag-list" aria-label="Episode tags">
       {% for tag in episode.tags %}

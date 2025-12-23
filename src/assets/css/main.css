@@ -227,6 +227,27 @@ main {
   margin: 0 0 var(--spacing-md);
 }
 
+.episode-transcript {
+  margin: var(--spacing-lg) 0;
+}
+
+.transcript-link {
+  font-family: var(--font-ui);
+  font-size: 0.875rem;
+  color: var(--color-accent);
+  text-decoration: none;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--color-accent);
+  border-radius: 4px;
+  display: inline-block;
+  transition: all var(--transition);
+}
+
+.transcript-link:hover {
+  background: var(--color-accent);
+  color: #fff;
+}
+
 .episode-tags {
   margin-top: var(--spacing-lg);
   padding-top: var(--spacing-lg);

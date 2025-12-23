@@ -1,0 +1,36 @@
+<div class="audio-player" data-src="{{ episode.audioUrl }}" data-episode-id="{{ episode.id }}" data-duration="{{ episode.duration }}">
+  <div class="player-controls">
+    <button class="play-pause" aria-label="Play episode">
+      <span class="icon-play" aria-hidden="true">&#9654;</span>
+      <span class="icon-pause" aria-hidden="true" hidden>&#10074;&#10074;</span>
+    </button>
+
+    <button class="skip-back" aria-label="Skip back 15 seconds">
+      <span aria-hidden="true">-15s</span>
+    </button>
+
+    <div class="progress-container">
+      <div class="progress-bar" role="slider" aria-label="Audio progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
+        <div class="progress-fill"></div>
+        <div class="progress-handle"></div>
+      </div>
+      <div class="time-display">
+        <time class="current" aria-label="Current time">0:00</time>
+        <span class="time-separator">/</span>
+        <time class="total" aria-label="Total duration">{{ episode.duration }}</time>
+      </div>
+    </div>
+
+    <button class="skip-forward" aria-label="Skip forward 15 seconds">
+      <span aria-hidden="true">+15s</span>
+    </button>
+
+    <button class="speed" aria-label="Playback speed: 1x">
+      <span>1x</span>
+    </button>
+
+    <a class="download" href="{{ episode.audioUrl }}" download aria-label="Download episode">
+      <span aria-hidden="true">&#8595;</span>
+    </a>
+  </div>
+</div>

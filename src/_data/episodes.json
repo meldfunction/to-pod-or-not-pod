@@ -1,0 +1,112 @@
+{
+  "episodes": [
+    {
+      "id": 1,
+      "title": "The Vrata Rules",
+      "rabbitHole": 1,
+      "airDate": "2025-01-15",
+      "duration": "33:30",
+      "durationSeconds": 2010,
+      "audioUrl": "https://archive.org/download/overheard-ep01/vrata-rules.mp3",
+      "description": "A 41-day Hindu purification practice becomes a lens for understanding transformation, discipline, and the sacred rhythms that shape human behavior across cultures.",
+      "longDescription": "What starts as an overheard conversation about dietary restrictions leads us deep into the world of Vrata—ancient Hindu observances that range from simple fasting to elaborate 41-day purification rituals. We explore how these practices create containers for transformation, and what they reveal about the human need for structured renewal.",
+      "tags": ["transformation", "vrata", "ritual", "discipline", "hinduism"]
+    },
+    {
+      "id": 2,
+      "title": "The Memory Palace of Smell",
+      "rabbitHole": 1,
+      "airDate": "2025-01-22",
+      "duration": "28:45",
+      "durationSeconds": 1725,
+      "audioUrl": "https://archive.org/download/overheard-ep02/memory-smell.mp3",
+      "description": "Why does the scent of coffee transport us through time? We explore the neuroscience of olfactory memory and its profound connection to emotion.",
+      "longDescription": "A barista mentions that a customer always orders the same drink her grandmother used to make. This sparks an investigation into why smell is our most evocative sense—bypassing the thalamus to connect directly with memory and emotion. We visit perfumers, neuroscientists, and the people who've learned to weaponize scent for marketing.",
+      "tags": ["neuroscience", "memory", "senses", "psychology"]
+    },
+    {
+      "id": 3,
+      "title": "The Geometry of Espresso",
+      "rabbitHole": 2,
+      "airDate": "2025-01-29",
+      "duration": "31:15",
+      "durationSeconds": 1875,
+      "audioUrl": "https://archive.org/download/overheard-ep03/geometry-espresso.mp3",
+      "description": "The mathematics hidden in your morning cup—from golden ratios to fluid dynamics, we uncover the precise science of the perfect shot.",
+      "longDescription": "An argument between two engineers about optimal extraction times sends us into the surprisingly mathematical world of espresso. We discover that the perfect shot involves fluid dynamics, thermodynamics, and even chaos theory. Along the way, we meet the scientists trying to create a unified theory of coffee.",
+      "tags": ["mathematics", "coffee", "science", "engineering"]
+    },
+    {
+      "id": 4,
+      "title": "Third Places and Thin Spaces",
+      "rabbitHole": 2,
+      "airDate": "2025-02-05",
+      "duration": "36:20",
+      "durationSeconds": 2180,
+      "audioUrl": "https://archive.org/download/overheard-ep04/third-places.mp3",
+      "description": "Ray Oldenburg called them 'third places.' Celtic tradition calls them 'thin spaces.' We explore why coffee shops feel like neither home nor work—but something sacred.",
+      "longDescription": "Why do strangers open up to each other in coffee shops? We trace the sociological concept of 'third places' back to Ray Oldenburg's work and forward to Celtic mysticism's 'thin spaces'—locations where the boundary between worlds grows thin. We interview regular customers who've had life-changing conversations with strangers.",
+      "tags": ["sociology", "community", "spirituality", "urban-design"]
+    },
+    {
+      "id": 5,
+      "title": "The Acoustics of Creativity",
+      "rabbitHole": 3,
+      "airDate": "2025-02-12",
+      "duration": "29:00",
+      "durationSeconds": 1740,
+      "audioUrl": "https://archive.org/download/overheard-ep05/acoustics-creativity.mp3",
+      "description": "There's a reason writers flock to coffee shops. We investigate the specific decibel levels and ambient frequencies that unlock creative thinking.",
+      "longDescription": "A novelist explains she can only write in coffee shops—never at home, never in libraries. This leads us to research on ambient noise and creativity, the specific frequency range that enhances abstract thinking, and why complete silence can actually inhibit imagination. We build our own creativity soundscape.",
+      "tags": ["creativity", "acoustics", "productivity", "psychology"]
+    },
+    {
+      "id": 6,
+      "title": "The Caffeine Cartographers",
+      "rabbitHole": 3,
+      "airDate": "2025-02-19",
+      "duration": "34:45",
+      "durationSeconds": 2085,
+      "audioUrl": "https://archive.org/download/overheard-ep06/caffeine-cartographers.mp3",
+      "description": "Coffee shaped the map of the modern world. We trace the bean's journey from Ethiopian highlands to global commodity—and the empires built along the way.",
+      "longDescription": "Two historians debating colonial trade routes inspire an episode about coffee's role in shaping modernity. From the Sufi monasteries of Yemen to the coffee houses of Enlightenment Europe to the fair trade movements of today, we trace how a single plant has redrawn borders and revolutionized economies.",
+      "tags": ["history", "colonialism", "trade", "economics"]
+    },
+    {
+      "id": 7,
+      "title": "The Ritual of Regulars",
+      "rabbitHole": 4,
+      "airDate": "2025-02-26",
+      "duration": "27:30",
+      "durationSeconds": 1650,
+      "audioUrl": "https://archive.org/download/overheard-ep07/ritual-regulars.mp3",
+      "description": "Every coffee shop has them—the regulars who arrive at the same time, order the same drink, sit in the same spot. We explore the psychology of ritual and routine.",
+      "longDescription": "A barista knows exactly when each regular will arrive and what they'll order. This precision timing leads us into the psychology of ritual, the neuroscience of habit formation, and the deep human need for predictable patterns in an unpredictable world. We interview regulars about what their routines really mean.",
+      "tags": ["psychology", "habits", "ritual", "routine"]
+    },
+    {
+      "id": 8,
+      "title": "Conversations with Strangers",
+      "rabbitHole": 4,
+      "airDate": "2025-03-05",
+      "duration": "32:00",
+      "durationSeconds": 1920,
+      "audioUrl": "https://archive.org/download/overheard-ep08/stranger-conversations.mp3",
+      "description": "We're told not to talk to strangers. But research shows brief encounters with unknown others may be essential to wellbeing. We investigate the science of weak ties.",
+      "longDescription": "Two strangers strike up a conversation about a book one of them is reading. Within twenty minutes, they've shared surprisingly intimate details of their lives. We explore research on 'weak ties,' the psychological safety of stranger confession, and why these brief encounters often feel more meaningful than conversations with friends.",
+      "tags": ["social-psychology", "connection", "wellbeing", "communication"]
+    },
+    {
+      "id": 9,
+      "title": "The Last Cup",
+      "rabbitHole": 5,
+      "airDate": "2025-03-12",
+      "duration": "38:15",
+      "durationSeconds": 2295,
+      "audioUrl": "https://archive.org/download/overheard-ep09/last-cup.mp3",
+      "description": "Season finale: We return to the themes that emerged across all episodes and ask—what have we really been listening for? A meditation on attention, presence, and endings.",
+      "longDescription": "In our final episode, we weave together threads from the entire season. The barista who started it all reflects on years of overheard conversations. We revisit our favorite rabbit holes and discover what they have in common: a fundamental human longing to be heard, understood, and connected. This is not just about coffee—it's about attention itself.",
+      "tags": ["reflection", "attention", "presence", "connection", "finale"]
+    }
+  ]
+}

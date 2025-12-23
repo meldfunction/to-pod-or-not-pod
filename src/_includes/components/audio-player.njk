@@ -1,4 +1,5 @@
-<div class="audio-player" data-src="{{ episode.audioUrl }}" data-episode-id="{{ episode.id }}" data-duration="{{ episode.duration }}">
+{% set audioSrc = episode.audioUrl | url if episode.audioUrl.startsWith('/') else episode.audioUrl %}
+<div class="audio-player" data-src="{{ audioSrc }}" data-episode-id="{{ episode.id }}" data-duration="{{ episode.duration }}">
   <div class="player-controls">
     <button class="play-pause" aria-label="Play episode">
       <span class="icon-play" aria-hidden="true">&#9654;</span>
@@ -29,7 +30,7 @@
       <span>1x</span>
     </button>
 
-    <a class="download" href="{{ episode.audioUrl }}" download aria-label="Download episode">
+    <a class="download" href="{{ audioSrc }}" download aria-label="Download episode">
       <span aria-hidden="true">&#8595;</span>
     </a>
   </div>

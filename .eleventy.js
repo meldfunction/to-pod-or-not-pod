@@ -17,6 +17,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets/css");
   eleventyConfig.addPassthroughCopy("src/assets/js");
   eleventyConfig.addPassthroughCopy("src/assets/images");
+  eleventyConfig.addPassthroughCopy("src/.nojekyll");
 
   // Date filters
   eleventyConfig.addFilter("dateDisplay", (dateStr) => {
@@ -57,6 +58,7 @@ module.exports = function(eleventyConfig) {
   });
 
   return {
+    pathPrefix: process.env.ELEVENTY_ENV === 'production' ? '/to-pod-or-not-pod/' : '/',
     dir: {
       input: "src",
       output: "_site",

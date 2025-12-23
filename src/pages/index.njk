@@ -1,0 +1,30 @@
+---
+layout: layouts/base.njk
+title: Episodes
+permalink: /
+---
+
+<div class="container">
+  <header class="page-header">
+    <h1 class="page-title">{{ site.title }}</h1>
+    <p class="page-description">{{ site.description }}</p>
+  </header>
+
+  <ul class="episode-list">
+    {% for episode in episodes.episodes | sortByDate %}
+    <li class="episode-item">
+      <p class="episode-meta">
+        <span class="episode-number">Episode {{ episode.id | padStart(2) }}</span>
+        &middot;
+        <time datetime="{{ episode.airDate }}">{{ episode.airDate | dateDisplay }}</time>
+        &middot;
+        {{ episode.duration }}
+      </p>
+      <h2 class="episode-title">
+        <a href="/episodes/{{ episode.id }}/">{{ episode.title }}</a>
+      </h2>
+      <p class="episode-description">{{ episode.description }}</p>
+    </li>
+    {% endfor %}
+  </ul>
+</div>

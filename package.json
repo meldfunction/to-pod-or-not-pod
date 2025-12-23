@@ -1,0 +1,24 @@
+{
+  "name": "things-overheard-at-the-coffee-bar",
+  "version": "1.0.0",
+  "description": "A 9-episode research podcast about unexpected discoveries",
+  "main": "index.js",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy",
+    "clean": "rm -rf _site"
+  },
+  "keywords": [
+    "podcast",
+    "eleventy",
+    "11ty",
+    "static-site"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "markdown-it": "^14.0.0"
+  }
+}

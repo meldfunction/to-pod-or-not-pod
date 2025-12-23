@@ -1,0 +1,62 @@
+---
+permalink: /feed.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:itunes="http://www.itunes.apple.com/dtds/podcast-1.0.dtd"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>{{ site.title }}</title>
+    <link>{{ site.url }}</link>
+    <description>{{ site.description }}</description>
+    <language>{{ site.language }}</language>
+    <copyright>{{ site.copyright }}</copyright>
+    <lastBuildDate>{{ episodes.episodes[0].airDate | dateRFC2822 }}</lastBuildDate>
+    <atom:link href="{{ site.feedUrl }}" rel="self" type="application/rss+xml"/>
+
+    <!-- iTunes/Podcast metadata -->
+    <itunes:author>{{ site.author }}</itunes:author>
+    <itunes:summary>{{ site.description }}</itunes:summary>
+    <itunes:type>serial</itunes:type>
+    <itunes:owner>
+      <itunes:name>{{ site.author }}</itunes:name>
+      <itunes:email>{{ site.email }}</itunes:email>
+    </itunes:owner>
+    <itunes:explicit>{{ "yes" if site.explicit else "no" }}</itunes:explicit>
+    <itunes:category text="{{ site.itunesCategory }}">
+      <itunes:category text="{{ site.itunesSubcategory }}"/>
+    </itunes:category>
+    <itunes:image href="{{ site.image }}"/>
+    <image>
+      <url>{{ site.image }}</url>
+      <title>{{ site.title }}</title>
+      <link>{{ site.url }}</link>
+    </image>
+
+    {% for episode in episodes.episodes | sortByDate %}
+    <item>
+      <title>{{ episode.title }}</title>
+      <link>{{ site.url }}/episodes/{{ episode.id }}/</link>
+      <guid isPermaLink="true">{{ site.url }}/episodes/{{ episode.id }}/</guid>
+      <pubDate>{{ episode.airDate | dateRFC2822 }}</pubDate>
+      <description><![CDATA[{{ episode.description }}]]></description>
+      <content:encoded><![CDATA[<p>{{ episode.longDescription }}</p>]]></content:encoded>
+
+      <enclosure
+        url="{{ episode.audioUrl }}"
+        type="audio/mpeg"
+        length="{{ episode.durationSeconds * 128000 / 8 }}"/>
+
+      <itunes:title>{{ episode.title }}</itunes:title>
+      <itunes:episode>{{ episode.id }}</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:summary>{{ episode.description }}</itunes:summary>
+      <itunes:duration>{{ episode.duration }}</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+    </item>
+    {% endfor %}
+  </channel>
+</rss>

@@ -16,25 +16,25 @@
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.feedUrl }}">
 
   <!-- Favicon -->
-  <link rel="icon" href="/assets/images/favicon.ico" sizes="any">
+  <link rel="icon" href="{{ '/assets/images/favicon.ico' | url }}" sizes="any">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}">
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <header class="site-header">
     <div class="container">
-      <a href="/" class="site-logo">
+      <a href="{{ '/' | url }}" class="site-logo">
         <span class="logo-text">Things Overheard</span>
         <span class="logo-subtext">at the Coffee Bar</span>
       </a>
       <nav class="site-nav" aria-label="Main navigation">
         <ul>
-          <li><a href="/" {% if page.url == "/" %}aria-current="page"{% endif %}>Episodes</a></li>
-          <li><a href="/about/" {% if page.url == "/about/" %}aria-current="page"{% endif %}>About</a></li>
-          <li><a href="/feed.xml" class="rss-link" aria-label="RSS Feed">RSS</a></li>
+          <li><a href="{{ '/' | url }}" {% if page.url == "/" %}aria-current="page"{% endif %}>Episodes</a></li>
+          <li><a href="{{ '/about/' | url }}" {% if page.url == "/about/" %}aria-current="page"{% endif %}>About</a></li>
+          <li><a href="{{ '/feed.xml' | url }}" class="rss-link" aria-label="RSS Feed">RSS</a></li>
         </ul>
       </nav>
     </div>
@@ -53,6 +53,6 @@
     </div>
   </footer>
 
-  <script src="/assets/js/audio-player.js"></script>
+  <script src="{{ '/assets/js/audio-player.js' | url }}"></script>
 </body>
 </html>

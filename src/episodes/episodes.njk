@@ -42,12 +42,12 @@ layout: layouts/base.njk
 
     <div>
       {% if prevEpisode %}
-      <a href="/episodes/{{ prevEpisode.id }}/">&larr; {{ prevEpisode.title }}</a>
+      <a href="{{ '/episodes/' + prevEpisode.id | string + '/' | url }}">&larr; {{ prevEpisode.title }}</a>
       {% endif %}
     </div>
     <div>
       {% if nextEpisode %}
-      <a href="/episodes/{{ nextEpisode.id }}/">{{ nextEpisode.title }} &rarr;</a>
+      <a href="{{ '/episodes/' + nextEpisode.id | string + '/' | url }}">{{ nextEpisode.title }} &rarr;</a>
       {% endif %}
     </div>
   </nav>

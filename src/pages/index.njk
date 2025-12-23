@@ -21,7 +21,7 @@ permalink: /
         {{ episode.duration }}
       </p>
       <h2 class="episode-title">
-        <a href="/episodes/{{ episode.id }}/">{{ episode.title }}</a>
+        <a href="{{ '/episodes/' + episode.id | string + '/' | url }}">{{ episode.title }}</a>
       </h2>
       <p class="episode-description">{{ episode.description }}</p>
     </li>

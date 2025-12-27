@@ -153,6 +153,29 @@ main {
   margin: 0;
 }
 
+/* Season Sections */
+.season-section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.season-section:last-child {
+  margin-bottom: 0;
+}
+
+.season-title {
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin: 0 0 var(--spacing-xs);
+  color: var(--color-accent);
+  letter-spacing: -0.02em;
+}
+
+.season-description {
+  color: var(--color-text-muted);
+  margin: 0 0 var(--spacing-lg);
+  font-size: 1rem;
+}
+
 /* Episode List */
 .episode-list {
   list-style: none;

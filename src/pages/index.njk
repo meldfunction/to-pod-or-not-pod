@@ -3,28 +3,57 @@ layout: layouts/base.njk
 title: Episodes
 permalink: /
 ---
-
 <div class="container">
   <header class="page-header">
     <h1 class="page-title">{{ site.title }}</h1>
     <p class="page-description">{{ site.description }}</p>
   </header>
 
-  <ul class="episode-list">
-    {% for episode in episodes.episodes | sortByDate %}
-    <li class="episode-item">
-      <p class="episode-meta">
-        <span class="episode-number">Episode {{ episode.id | padStart(2) }}</span>
-        &middot;
-        <time datetime="{{ episode.airDate }}">{{ episode.airDate | dateDisplay }}</time>
-        &middot;
-        {{ episode.duration }}
-      </p>
-      <h2 class="episode-title">
-        <a href="{{ '/episodes/' + episode.id | string + '/' | url }}">{{ episode.title }}</a>
-      </h2>
-      <p class="episode-description">{{ episode.description }}</p>
-    </li>
-    {% endfor %}
-  </ul>
+  <section class="season-section">
+    <h2 class="season-title">Season 2</h2>
+    <p class="season-description">Nine new rabbit holes exploring embodiment, discovery, and the art of attention.</p>
+    <ul class="episode-list">
+      {% for episode in episodes.episodes | sortById %}
+        {% if episode.season == 2 %}
+        <li class="episode-item">
+          <p class="episode-meta">
+            <span class="episode-number">S2 E{{ (episode.id - 9) | padStart(2) }}</span>
+            &middot;
+            <time datetime="{{ episode.airDate }}">{{ episode.airDate | dateDisplay }}</time>
+            &middot;
+            {{ episode.duration }}
+          </p>
+          <h3 class="episode-title">
+            <a href="{{ ('/episodes/' + episode.id + '/') | url }}">{{ episode.title }}</a>
+          </h3>
+          <p class="episode-description">{{ episode.description }}</p>
+        </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section class="season-section">
+    <h2 class="season-title">Season 1</h2>
+    <p class="season-description">Where it all began: nine episodes following rabbit holes of curiosity into fascinating territories.</p>
+    <ul class="episode-list">
+      {% for episode in episodes.episodes | sortById %}
+        {% if episode.season == 1 %}
+        <li class="episode-item">
+          <p class="episode-meta">
+            <span class="episode-number">S1 E{{ episode.id | padStart(2) }}</span>
+            &middot;
+            <time datetime="{{ episode.airDate }}">{{ episode.airDate | dateDisplay }}</time>
+            &middot;
+            {{ episode.duration }}
+          </p>
+          <h3 class="episode-title">
+            <a href="{{ ('/episodes/' + episode.id + '/') | url }}">{{ episode.title }}</a>
+          </h3>
+          <p class="episode-description">{{ episode.description }}</p>
+        </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </section>
 </div>

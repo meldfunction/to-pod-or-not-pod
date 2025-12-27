@@ -13,13 +13,9 @@ module.exports = function(eleventyConfig) {
   });
   eleventyConfig.setLibrary("md", md);
 
-  // Passthrough copy for assets
-  eleventyConfig.addPassthroughCopy("src/assets/css");
-  eleventyConfig.addPassthroughCopy("src/assets/js");
-  eleventyConfig.addPassthroughCopy("src/assets/images");
-  eleventyConfig.addPassthroughCopy("src/assets/audio");
-  eleventyConfig.addPassthroughCopy("src/assets/transcripts");
-  eleventyConfig.addPassthroughCopy("src/.nojekyll");
+  // Passthrough copy for assets (remap src/assets/* to assets/*)
+  eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
+  eleventyConfig.addPassthroughCopy({ "src/.nojekyll": ".nojekyll" });
 
   // Date filters
   eleventyConfig.addFilter("dateDisplay", (dateStr) => {

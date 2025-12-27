@@ -996,11 +996,23 @@ main {
   padding: 0 var(--spacing-md);
 }
 
+.submit-content .page-header {
+  margin-bottom: var(--spacing-xl);
+}
+
+.submit-content .page-title {
+  margin-bottom: var(--spacing-md);
+}
+
 .submit-content h2 {
   font-size: 1.25rem;
   font-weight: normal;
   margin: var(--spacing-xl) 0 var(--spacing-sm);
   color: var(--color-accent);
+}
+
+.submit-content h2:first-of-type {
+  margin-top: var(--spacing-lg);
 }
 
 .submit-content p {

@@ -9,6 +9,23 @@ permalink: /
     <p class="page-description">{{ site.description }}</p>
   </header>
 
+  {% set episode = episodes.episodes | getEpisodeById(18) %}
+  <section class="featured-episode">
+    <p class="featured-label">Latest Episode</p>
+    <p class="episode-meta">
+      <span class="episode-number">S2 E09</span>
+      &middot;
+      <time datetime="{{ episode.airDate }}">{{ episode.airDate | dateDisplay }}</time>
+      &middot;
+      {{ episode.duration }}
+    </p>
+    <h2 class="episode-title">
+      <a href="{{ '/episodes/18/' | url }}">{{ episode.title }}</a>
+    </h2>
+    <p class="episode-description">{{ episode.description }}</p>
+    {% include "components/audio-player.njk" %}
+  </section>
+
   <section class="season-section">
     <h2 class="season-title">Season 2: Lower Notes of Relativity</h2>
     <p class="season-description"><em>How do you know what you know? How do you love yourself by paying attention? How do you navigate dissonance without forcing harmony?</em></p>

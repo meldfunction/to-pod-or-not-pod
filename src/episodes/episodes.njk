@@ -10,7 +10,9 @@ layout: layouts/base.njk
 <article class="container">
   <header class="episode-header">
     <p class="episode-meta">
-      {% if episode.season == 2 %}
+      {% if episode.season == 3 %}
+      <span class="episode-number">S3 E{{ (episode.id - 18) | padStart(2) }}</span>
+      {% elif episode.season == 2 %}
       <span class="episode-number">S2 E{{ (episode.id - 9) | padStart(2) }}</span>
       {% else %}
       <span class="episode-number">S1 E{{ episode.id | padStart(2) }}</span>

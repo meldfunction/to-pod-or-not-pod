@@ -1,0 +1,5 @@
+# Ignore transcript markdown files - they should be passed through, not processed
+src/assets/transcripts/*.md
+
+# Ignore source transcript folders - these are just source files
+src/transcripts/

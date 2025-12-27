@@ -172,8 +172,90 @@ main {
 
 .season-description {
   color: var(--color-text-muted);
-  margin: 0 0 var(--spacing-lg);
+  margin: 0 0 var(--spacing-sm);
   font-size: 1rem;
+}
+
+.season-summary {
+  margin: 0 0 var(--spacing-sm);
+}
+
+.season-link {
+  margin: 0 0 var(--spacing-lg);
+}
+
+.season-link a {
+  font-family: var(--font-ui);
+  font-size: 0.875rem;
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.season-link a:hover {
+  text-decoration: underline;
+}
+
+/* Rabbit Holes */
+.rabbit-hole {
+  margin-bottom: var(--spacing-lg);
+}
+
+.rabbit-hole:last-child {
+  margin-bottom: 0;
+}
+
+.rabbit-hole-title {
+  font-size: 1rem;
+  font-weight: normal;
+  margin: 0 0 var(--spacing-sm);
+  color: var(--color-text);
+  font-family: var(--font-ui);
+}
+
+.rabbit-hole-question {
+  color: var(--color-text-muted);
+  margin: 0 0 var(--spacing-md);
+}
+
+/* Compact Episode List */
+.episode-list.compact {
+  margin-left: var(--spacing-md);
+}
+
+.episode-list.compact .episode-item {
+  padding: var(--spacing-xs) 0;
+  border-bottom: none;
+}
+
+.episode-list.compact .episode-item a {
+  display: flex;
+  align-items: baseline;
+  gap: var(--spacing-sm);
+  text-decoration: none;
+  color: var(--color-text);
+  transition: color var(--transition);
+}
+
+.episode-list.compact .episode-item a:hover {
+  color: var(--color-accent);
+}
+
+.episode-list.compact .episode-number {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  min-width: 50px;
+}
+
+.episode-list.compact .episode-title {
+  font-size: 1rem;
+  margin: 0;
+  flex: 1;
+}
+
+.episode-list.compact .episode-duration {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
 }
 
 /* Episode List */
@@ -537,8 +619,224 @@ main {
   color: var(--color-accent);
 }
 
+.about-content h3 {
+  font-size: 1.1rem;
+  font-weight: normal;
+  margin: var(--spacing-lg) 0 var(--spacing-xs);
+}
+
 .about-content p {
   margin: 0 0 var(--spacing-md);
+}
+
+.about-content ol,
+.about-content ul {
+  margin: 0 0 var(--spacing-md);
+  padding-left: var(--spacing-lg);
+}
+
+.about-content li {
+  margin-bottom: var(--spacing-xs);
+}
+
+.season-preview {
+  margin-bottom: var(--spacing-lg);
+  padding: var(--spacing-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+}
+
+.season-preview h3 {
+  margin-top: 0;
+}
+
+/* Season Overview Pages */
+.season-overview {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.season-label {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-accent);
+  margin: 0 0 var(--spacing-xs);
+}
+
+.season-tagline {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.season-intro {
+  margin: var(--spacing-xl) 0;
+}
+
+.season-intro p {
+  margin: 0 0 var(--spacing-md);
+}
+
+.rabbit-holes-intro {
+  margin: var(--spacing-xl) 0;
+  padding: var(--spacing-lg);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+}
+
+.rabbit-holes-intro h2 {
+  font-size: 1.25rem;
+  font-weight: normal;
+  margin: 0 0 var(--spacing-md);
+  color: var(--color-accent);
+}
+
+.rabbit-holes-intro p {
+  margin: 0 0 var(--spacing-md);
+}
+
+.rabbit-holes-intro p:last-child {
+  margin-bottom: 0;
+}
+
+.season-overview section.rabbit-hole {
+  margin: var(--spacing-xl) 0;
+  padding-bottom: var(--spacing-xl);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.season-overview section.rabbit-hole:last-of-type {
+  border-bottom: none;
+}
+
+.season-overview .rabbit-hole h2 {
+  font-size: 1.25rem;
+  font-weight: normal;
+  margin: 0 0 var(--spacing-xs);
+  color: var(--color-accent);
+}
+
+.season-overview .episode-list {
+  margin-top: var(--spacing-md);
+}
+
+.season-overview .episode-item {
+  padding: var(--spacing-md) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.season-overview .episode-item:last-child {
+  border-bottom: none;
+}
+
+.season-overview .episode-link {
+  display: flex;
+  align-items: baseline;
+  gap: var(--spacing-sm);
+  text-decoration: none;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-xs);
+}
+
+.season-overview .episode-link:hover {
+  color: var(--color-accent);
+}
+
+.season-overview .episode-link .episode-number {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  min-width: 55px;
+}
+
+.season-overview .episode-link .episode-title {
+  font-size: 1.1rem;
+  margin: 0;
+  flex: 1;
+}
+
+.season-overview .episode-link .episode-duration {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.episode-insight,
+.episode-description {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin: 0;
+  padding-left: calc(55px + var(--spacing-sm));
+}
+
+.season-themes {
+  margin: var(--spacing-xl) 0;
+}
+
+.season-themes h2 {
+  font-size: 1.25rem;
+  font-weight: normal;
+  margin: 0 0 var(--spacing-md);
+  color: var(--color-accent);
+}
+
+.season-themes ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.season-themes li {
+  margin-bottom: var(--spacing-sm);
+  padding-left: var(--spacing-md);
+  border-left: 2px solid var(--color-border);
+}
+
+.season-credits {
+  margin: var(--spacing-xl) 0;
+  padding: var(--spacing-lg);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+}
+
+.season-credits h2 {
+  font-size: 1rem;
+  font-weight: normal;
+  margin: 0 0 var(--spacing-sm);
+  color: var(--color-accent);
+}
+
+.season-credits p {
+  font-size: 0.9rem;
+  margin: 0 0 var(--spacing-xs);
+}
+
+.season-credits p:last-child {
+  margin-bottom: 0;
+}
+
+.season-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--color-border);
+}
+
+.season-nav .nav-link {
+  font-family: var(--font-ui);
+  font-size: 0.875rem;
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.season-nav .nav-link:hover {
+  text-decoration: underline;
 }
 
 /* Footer */

@@ -1,0 +1,62 @@
+---
+pagination:
+  data: episodes.episodes
+  size: 1
+  alias: episode
+permalink: /episodes/{{ episode.id }}/
+layout: layouts/base.njk
+---
+
+<article class="container">
+  <header class="episode-header">
+    <p class="episode-meta">
+      <span class="episode-number">Episode {{ episode.id | padStart(2) }}</span>
+      &middot;
+      Rabbit Hole {{ episode.rabbitHole }}
+      &middot;
+      <time datetime="{{ episode.airDate }}">{{ episode.airDate | dateDisplay }}</time>
+      &middot;
+      {{ episode.duration }}
+    </p>
+    <h1 class="episode-title">{{ episode.title }}</h1>
+  </header>
+
+  {% include "components/audio-player.njk" %}
+
+  <div class="episode-content">
+    <p><strong>{{ episode.description }}</strong></p>
+    <p>{{ episode.longDescription }}</p>
+  </div>
+
+  {% if episode.transcriptUrl %}
+  <div class="episode-transcript">
+    <a href="{{ episode.transcriptUrl | url }}" class="transcript-link" target="_blank" rel="noopener">
+      Download Transcript (PDF)
+    </a>
+  </div>
+  {% endif %}
+
+  <aside class="episode-tags">
+    <ul class="tag-list" aria-label="Episode tags">
+      {% for tag in episode.tags %}
+      <li class="tag">{{ tag }}</li>
+      {% endfor %}
+    </ul>
+  </aside>
+
+  <nav class="episode-nav" aria-label="Episode navigation">
+    {% set prevEpisode = episodes.episodes | getEpisodeById(episode.id - 1) %}
+    {% set nextEpisode = episodes.episodes | getEpisodeById(episode.id + 1) %}
+
+    <div>
+      {% if prevEpisode %}
+      <a href="{{ '/episodes/' + prevEpisode.id | string + '/' | url }}">&larr; {{ prevEpisode.title }}</a>
+      {% endif %}
+    </div>
+    <div>
+      {% if nextEpisode %}
+      <a href="{{ '/episodes/' + nextEpisode.id | string + '/' | url }}">{{ nextEpisode.title }} &rarr;</a>
+      {% endif %}
+    </div>
+  </nav>
+</article>

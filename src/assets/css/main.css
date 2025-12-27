@@ -153,6 +153,29 @@ main {
   margin: 0;
 }
 
+/* Season Sections */
+.season-section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.season-section:last-child {
+  margin-bottom: 0;
+}
+
+.season-title {
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin: 0 0 var(--spacing-xs);
+  color: var(--color-accent);
+  letter-spacing: -0.02em;
+}
+
+.season-description {
+  color: var(--color-text-muted);
+  margin: 0 0 var(--spacing-lg);
+  font-size: 1rem;
+}
+
 /* Episode List */
 .episode-list {
   list-style: none;
@@ -246,6 +269,84 @@ main {
 .transcript-link:hover {
   background: var(--color-accent);
   color: #fff;
+}
+
+.transcript-preview-btn {
+  font-family: var(--font-ui);
+  font-size: 0.875rem;
+  color: var(--color-text);
+  background: var(--color-bg);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all var(--transition);
+  margin-right: var(--spacing-sm);
+}
+
+.transcript-preview-btn:hover {
+  border-color: var(--color-text);
+}
+
+/* PDF Modal */
+.pdf-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pdf-modal[hidden] {
+  display: none;
+}
+
+.pdf-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.pdf-modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 900px;
+  height: 85vh;
+  background: var(--color-surface);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.pdf-modal-close {
+  position: absolute;
+  top: var(--spacing-sm);
+  right: var(--spacing-sm);
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: var(--color-text);
+  color: var(--color-bg);
+  font-size: 1.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.pdf-modal-close:hover {
+  background: var(--color-accent);
+}
+
+.pdf-viewer {
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
 .episode-tags {

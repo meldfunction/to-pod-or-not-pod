@@ -30,8 +30,11 @@ layout: layouts/base.njk
 
   {% if episode.transcriptUrl %}
   <div class="episode-transcript">
-    <a href="{{ episode.transcriptUrl | url }}" class="transcript-link" target="_blank" rel="noopener">
-      Download Transcript (PDF)
+    <button class="transcript-preview-btn" data-pdf="{{ episode.transcriptUrl | url }}" aria-label="Preview transcript">
+      Preview Transcript
+    </button>
+    <a href="{{ episode.transcriptUrl | url }}" class="transcript-link" target="_blank" rel="noopener" download>
+      Download PDF
     </a>
   </div>
   {% endif %}

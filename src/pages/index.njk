@@ -9,51 +9,196 @@ permalink: /
     <p class="page-description">{{ site.description }}</p>
   </header>
 
-  <section class="season-section">
-    <h2 class="season-title">Season 2</h2>
-    <p class="season-description">Nine new rabbit holes exploring embodiment, discovery, and the art of attention.</p>
-    <ul class="episode-list">
-      {% for episode in episodes.episodes | sortById %}
-        {% if episode.season == 2 %}
-        <li class="episode-item">
-          <p class="episode-meta">
-            <span class="episode-number">S2 E{{ (episode.id - 9) | padStart(2) }}</span>
-            &middot;
-            <time datetime="{{ episode.airDate }}">{{ episode.airDate | dateDisplay }}</time>
-            &middot;
-            {{ episode.duration }}
-          </p>
-          <h3 class="episode-title">
-            <a href="{{ ('/episodes/' + episode.id + '/') | url }}">{{ episode.title }}</a>
-          </h3>
-          <p class="episode-description">{{ episode.description }}</p>
-        </li>
-        {% endif %}
-      {% endfor %}
-    </ul>
+  {% set episode = episodes.episodes | getEpisodeById(18) %}
+  <section class="featured-episode">
+    <p class="featured-label">Latest Episode</p>
+    <p class="episode-meta">
+      <span class="episode-number">S2 E09</span>
+      &middot;
+      <time datetime="{{ episode.airDate }}">{{ episode.airDate | dateDisplay }}</time>
+      &middot;
+      {{ episode.duration }}
+    </p>
+    <h2 class="episode-title">
+      <a href="{{ '/episodes/18/' | url }}">{{ episode.title }}</a>
+    </h2>
+    <p class="episode-description">{{ episode.description }}</p>
+    {% include "components/audio-player.njk" %}
   </section>
 
   <section class="season-section">
-    <h2 class="season-title">Season 1</h2>
-    <p class="season-description">Where it all began: nine episodes following rabbit holes of curiosity into fascinating territories.</p>
-    <ul class="episode-list">
-      {% for episode in episodes.episodes | sortById %}
-        {% if episode.season == 1 %}
+    <h2 class="season-title">Season 2: Lower Notes of Relativity</h2>
+    <p class="season-description"><em>How do you know what you know? How do you love yourself by paying attention? How do you navigate dissonance without forcing harmony?</em></p>
+    <p class="season-summary">Nine episodes exploring personal epistemology, meta-awareness, and the spaces between harmony and dissonance. A conversation between Rachel and BK recorded at coffee bars in Richmond, Virginia.</p>
+    <p class="season-link"><a href="{{ '/season-2/' | url }}">View Full Season 2 Overview &rarr;</a></p>
+
+    <div class="rabbit-hole">
+      <h3 class="rabbit-hole-title">Rabbit Hole One: Personal Epistemology</h3>
+      <ul class="episode-list compact">
         <li class="episode-item">
-          <p class="episode-meta">
-            <span class="episode-number">S1 E{{ episode.id | padStart(2) }}</span>
-            &middot;
-            <time datetime="{{ episode.airDate }}">{{ episode.airDate | dateDisplay }}</time>
-            &middot;
-            {{ episode.duration }}
-          </p>
-          <h3 class="episode-title">
-            <a href="{{ ('/episodes/' + episode.id + '/') | url }}">{{ episode.title }}</a>
-          </h3>
-          <p class="episode-description">{{ episode.description }}</p>
+          <a href="{{ '/episodes/10/' | url }}">
+            <span class="episode-number">S2 E01</span>
+            <span class="episode-title">Nobody Taught Me This in School</span>
+            <span class="episode-duration">46:00</span>
+          </a>
         </li>
-        {% endif %}
-      {% endfor %}
-    </ul>
+        <li class="episode-item">
+          <a href="{{ '/episodes/11/' | url }}">
+            <span class="episode-number">S2 E02</span>
+            <span class="episode-title">Embodied Semantics</span>
+            <span class="episode-duration">46:00</span>
+          </a>
+        </li>
+        <li class="episode-item">
+          <a href="{{ '/episodes/12/' | url }}">
+            <span class="episode-number">S2 E03</span>
+            <span class="episode-title">Discovery-Centered Everything</span>
+            <span class="episode-duration">46:00</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="rabbit-hole">
+      <h3 class="rabbit-hole-title">Rabbit Hole Two: Meta-Awareness as Practice</h3>
+      <ul class="episode-list compact">
+        <li class="episode-item">
+          <a href="{{ '/episodes/13/' | url }}">
+            <span class="episode-number">S2 E04</span>
+            <span class="episode-title">Your Cells Feel Green and Electric</span>
+            <span class="episode-duration">51:00</span>
+          </a>
+        </li>
+        <li class="episode-item">
+          <a href="{{ '/episodes/14/' | url }}">
+            <span class="episode-number">S2 E05</span>
+            <span class="episode-title">The Ocular Conclusion</span>
+            <span class="episode-duration">51:00</span>
+          </a>
+        </li>
+        <li class="episode-item">
+          <a href="{{ '/episodes/15/' | url }}">
+            <span class="episode-number">S2 E06</span>
+            <span class="episode-title">Observation as Love</span>
+            <span class="episode-duration">53:00</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="rabbit-hole">
+      <h3 class="rabbit-hole-title">Rabbit Hole Three: Navigating Harmony & Dissonance</h3>
+      <ul class="episode-list compact">
+        <li class="episode-item">
+          <a href="{{ '/episodes/16/' | url }}">
+            <span class="episode-number">S2 E07</span>
+            <span class="episode-title">Lower Notes Have More Relativity</span>
+            <span class="episode-duration">53:00</span>
+          </a>
+        </li>
+        <li class="episode-item">
+          <a href="{{ '/episodes/17/' | url }}">
+            <span class="episode-number">S2 E08</span>
+            <span class="episode-title">Inflection Points</span>
+            <span class="episode-duration">54:00</span>
+          </a>
+        </li>
+        <li class="episode-item">
+          <a href="{{ '/episodes/18/' | url }}">
+            <span class="episode-number">S2 E09</span>
+            <span class="episode-title">The Note After the Dissonant Note</span>
+            <span class="episode-duration">55:00</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="season-section">
+    <h2 class="season-title">Season 1: The Three Rabbit Holes</h2>
+    <p class="season-description"><em>What happens when we extract ancient practices? What makes us human when machines can think? Why can't we see systems anymore?</em></p>
+    <p class="season-summary">Nine episodes exploring transformation, embodied knowledge, and what we're losing without knowing we're losing it. Conversations overheard at coffee bars across Richmond.</p>
+    <p class="season-link"><a href="{{ '/season-1/' | url }}">View Full Season 1 Overview &rarr;</a></p>
+
+    <div class="rabbit-hole">
+      <h3 class="rabbit-hole-title">Rabbit Hole One: Transformation (The 42-Day Reset)</h3>
+      <ul class="episode-list compact">
+        <li class="episode-item">
+          <a href="{{ '/episodes/1/' | url }}">
+            <span class="episode-number">S1 E01</span>
+            <span class="episode-title">The Vrata Rules</span>
+            <span class="episode-duration">45:00</span>
+          </a>
+        </li>
+        <li class="episode-item">
+          <a href="{{ '/episodes/2/' | url }}">
+            <span class="episode-number">S1 E02</span>
+            <span class="episode-title">What Extraction Loses</span>
+            <span class="episode-duration">43:00</span>
+          </a>
+        </li>
+        <li class="episode-item">
+          <a href="{{ '/episodes/3/' | url }}">
+            <span class="episode-number">S1 E03</span>
+            <span class="episode-title">Responders vs Non-Responders</span>
+            <span class="episode-duration">42:00</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="rabbit-hole">
+      <h3 class="rabbit-hole-title">Rabbit Hole Two: Machines, Meaning & Value</h3>
+      <ul class="episode-list compact">
+        <li class="episode-item">
+          <a href="{{ '/episodes/4/' | url }}">
+            <span class="episode-number">S1 E04</span>
+            <span class="episode-title">The Pinocchio Problem</span>
+            <span class="episode-duration">44:00</span>
+          </a>
+        </li>
+        <li class="episode-item">
+          <a href="{{ '/episodes/5/' | url }}">
+            <span class="episode-number">S1 E05</span>
+            <span class="episode-title">How Learning Actually Works</span>
+            <span class="episode-duration">45:00</span>
+          </a>
+        </li>
+        <li class="episode-item">
+          <a href="{{ '/episodes/6/' | url }}">
+            <span class="episode-number">S1 E06</span>
+            <span class="episode-title">The Labor Question</span>
+            <span class="episode-duration">45:00</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="rabbit-hole">
+      <h3 class="rabbit-hole-title">Rabbit Hole Three: Systems Blindness & The 90s</h3>
+      <ul class="episode-list compact">
+        <li class="episode-item">
+          <a href="{{ '/episodes/7/' | url }}">
+            <span class="episode-number">S1 E07</span>
+            <span class="episode-title">Peak Reality</span>
+            <span class="episode-duration">47:00</span>
+          </a>
+        </li>
+        <li class="episode-item">
+          <a href="{{ '/episodes/8/' | url }}">
+            <span class="episode-number">S1 E08</span>
+            <span class="episode-title">Optimizing Metrics, Destroying Systems</span>
+            <span class="episode-duration">48:00</span>
+          </a>
+        </li>
+        <li class="episode-item">
+          <a href="{{ '/episodes/9/' | url }}">
+            <span class="episode-number">S1 E09</span>
+            <span class="episode-title">Irreversible Windows</span>
+            <span class="episode-duration">52:00</span>
+          </a>
+        </li>
+      </ul>
+    </div>
   </section>
 </div>

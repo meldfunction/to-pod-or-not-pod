@@ -1,3 +1,4 @@
+{% if episode.audioUrl %}
 {% set audioSrc = episode.audioUrl | url if episode.audioUrl.startsWith('/') else episode.audioUrl %}
 <div class="audio-player" data-src="{{ audioSrc }}" data-episode-id="{{ episode.id }}" data-duration="{{ episode.duration }}">
   <div class="player-controls">
@@ -35,3 +36,8 @@
     </a>
   </div>
 </div>
+{% else %}
+<div class="audio-player-unavailable">
+  <p>Audio coming soon</p>
+</div>
+{% endif %}

@@ -9,21 +9,109 @@ permalink: /
     <p class="page-description">{{ site.description }}</p>
   </header>
 
-  {% set episode = episodes.episodes | getEpisodeById(18) %}
+  {% set episode = episodes.episodes | getEpisodeById(27) %}
   <section class="featured-episode">
     <p class="featured-label">Latest Episode</p>
     <p class="episode-meta">
-      <span class="episode-number">S2 E09</span>
+      <span class="episode-number">S3 E09</span>
       &middot;
       <time datetime="{{ episode.airDate }}">{{ episode.airDate | dateDisplay }}</time>
       &middot;
       {{ episode.duration }}
     </p>
     <h2 class="episode-title">
-      <a href="{{ '/episodes/18/' | url }}">{{ episode.title }}</a>
+      <a href="{{ '/episodes/27/' | url }}">{{ episode.title }}</a>
     </h2>
     <p class="episode-description">{{ episode.description }}</p>
     {% include "components/audio-player.njk" %}
+  </section>
+
+  <section class="season-section">
+    <h2 class="season-title">Season 3: When The Ground Won't Stop Shifting</h2>
+    <p class="season-description"><em>"I've never felt this much behind as a programmer. There's a magnitude 9 earthquake rocking the profession."</em></p>
+    <p class="season-summary">Nine episodes exploring how to navigate when intelligence becomes abundant—patterns from the Amish, coal consumption history, and why collective resilience beats individual optimization.</p>
+    <p class="season-link"><a href="{{ '/season-3/' | url }}">View Full Season 3 Overview &rarr;</a></p>
+
+    <div class="rabbit-hole">
+      <h3 class="rabbit-hole-title">Rabbit Hole One: Discovery & Signals</h3>
+      <ul class="episode-list compact">
+        <li class="episode-item">
+          <a href="{{ '/episodes/19/' | url }}">
+            <span class="episode-number">S3 E01</span>
+            <span class="episode-title">The YouTube Dad Problem</span>
+            <span class="episode-duration">27:00</span>
+          </a>
+        </li>
+        <li class="episode-item">
+          <a href="{{ '/episodes/20/' | url }}">
+            <span class="episode-number">S3 E02</span>
+            <span class="episode-title">The Amish Method</span>
+            <span class="episode-duration">31:00</span>
+          </a>
+        </li>
+        <li class="episode-item">
+          <a href="{{ '/episodes/21/' | url }}">
+            <span class="episode-number">S3 E03</span>
+            <span class="episode-title">Boredom as Infrastructure</span>
+            <span class="episode-duration">29:00</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="rabbit-hole">
+      <h3 class="rabbit-hole-title">Rabbit Hole Two: Efficiency & Abundance</h3>
+      <ul class="episode-list compact">
+        <li class="episode-item">
+          <a href="{{ '/episodes/22/' | url }}">
+            <span class="episode-number">S3 E04</span>
+            <span class="episode-title">The Coal Question</span>
+            <span class="episode-duration">33:00</span>
+          </a>
+        </li>
+        <li class="episode-item">
+          <a href="{{ '/episodes/23/' | url }}">
+            <span class="episode-number">S3 E05</span>
+            <span class="episode-title">The 100x Pattern</span>
+            <span class="episode-duration">35:00</span>
+          </a>
+        </li>
+        <li class="episode-item">
+          <a href="{{ '/episodes/24/' | url }}">
+            <span class="episode-number">S3 E06</span>
+            <span class="episode-title">When Intelligence Overflows</span>
+            <span class="episode-duration">32:00</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="rabbit-hole">
+      <h3 class="rabbit-hole-title">Rabbit Hole Three: Collective Resilience</h3>
+      <ul class="episode-list compact">
+        <li class="episode-item">
+          <a href="{{ '/episodes/25/' | url }}">
+            <span class="episode-number">S3 E07</span>
+            <span class="episode-title">You Can't Do It Alone</span>
+            <span class="episode-duration">38:00</span>
+          </a>
+        </li>
+        <li class="episode-item">
+          <a href="{{ '/episodes/26/' | url }}">
+            <span class="episode-number">S3 E08</span>
+            <span class="episode-title">Participatory Value</span>
+            <span class="episode-duration">36:00</span>
+          </a>
+        </li>
+        <li class="episode-item">
+          <a href="{{ '/episodes/27/' | url }}">
+            <span class="episode-number">S3 E09</span>
+            <span class="episode-title">Building on Shifting Ground</span>
+            <span class="episode-duration">34:00</span>
+          </a>
+        </li>
+      </ul>
+    </div>
   </section>
 
   <section class="season-section">

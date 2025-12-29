@@ -16,6 +16,8 @@ module.exports = function(eleventyConfig) {
   // Passthrough copy for assets (remap src/assets/* to assets/*)
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addPassthroughCopy({ "src/.nojekyll": ".nojekyll" });
+  // Passthrough copy for episode audio files
+  eleventyConfig.addPassthroughCopy({ "src/episodes/*.m4a": "episodes" });
 
   // Date filters
   eleventyConfig.addFilter("dateDisplay", (dateStr) => {

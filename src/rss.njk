@@ -4,8 +4,8 @@ eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0"
+  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
   xmlns:atom="http://www.w3.org/2005/Atom"
-  xmlns:itunes="http://www.itunes.apple.com/dtds/podcast-1.0.dtd"
   xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>{{ site.title }}</title>
@@ -14,11 +14,12 @@ eleventyExcludeFromCollections: true
     <language>{{ site.language }}</language>
     <copyright>{{ site.copyright }}</copyright>
     <lastBuildDate>{{ episodes.episodes[0].airDate | dateRFC2822 }}</lastBuildDate>
+    
     <atom:link href="{{ site.feedUrl }}" rel="self" type="application/rss+xml"/>
-
+    
     <!-- iTunes/Podcast metadata -->
     <itunes:author>{{ site.author }}</itunes:author>
-    <itunes:summary>{{ site.description }}</itunes:summary>
+    <itunes:summary>{{ site.longDescription or site.description }}</itunes:summary>
     <itunes:type>serial</itunes:type>
     <itunes:owner>
       <itunes:name>{{ site.author }}</itunes:name>
@@ -29,32 +30,29 @@ eleventyExcludeFromCollections: true
       <itunes:category text="{{ site.itunesSubcategory }}"/>
     </itunes:category>
     <itunes:image href="{{ site.image }}"/>
+    
     <image>
       <url>{{ site.image }}</url>
       <title>{{ site.title }}</title>
       <link>{{ site.url }}</link>
     </image>
-
-    {% for episode in episodes.episodes | sortByDate %}
+    
+    {% for episode in episodes.episodes | sortByDate | reverse %}
     <item>
       <title>{{ episode.title }}</title>
       <link>{{ site.url }}/episodes/{{ episode.id }}/</link>
       <guid isPermaLink="true">{{ site.url }}/episodes/{{ episode.id }}/</guid>
       <pubDate>{{ episode.airDate | dateRFC2822 }}</pubDate>
       <description><![CDATA[{{ episode.description }}]]></description>
-      <content:encoded><![CDATA[<p>{{ episode.longDescription }}</p>]]></content:encoded>
-
+      {% if episode.longDescription %}<content:encoded><![CDATA[{{ episode.longDescription }}]]></content:encoded>{% endif %}
       <enclosure
         url="{{ episode.audioUrl }}"
-        type="audio/mpeg"
-        length="{{ episode.durationSeconds * 128000 / 8 }}"/>
-
-      <itunes:title>{{ episode.title }}</itunes:title>
-      <itunes:episode>{{ episode.id }}</itunes:episode>
-      <itunes:season>1</itunes:season>
-      <itunes:episodeType>full</itunes:episodeType>
-      <itunes:summary>{{ episode.description }}</itunes:summary>
+        type="{{ episode.audioType or 'audio/x-m4a' }}"
+        length="{{ episode.fileSize or (episode.durationSeconds * 128000 / 8) | round }}"/>
       <itunes:duration>{{ episode.duration }}</itunes:duration>
+      <itunes:episode>{{ episode.episodeNumber }}</itunes:episode>
+      <itunes:season>{{ episode.season }}</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>no</itunes:explicit>
     </item>
     {% endfor %}
